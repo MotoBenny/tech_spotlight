@@ -44,6 +44,10 @@ url = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?ke
 # job_title = soup.find('h3', class_="base-search-card__title").text
 # print(job_title.strip())
 
+# each individual job listing data (the text body) is located within a seperate URL
+# that url is under <a> tag with class="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]"
+
+
 def linkedin_scrape(url, page_num):
     next_page = url + str(page_num) # constructing the URL
     print(str(next_page)) # printing URL for viewing
@@ -53,8 +57,18 @@ def linkedin_scrape(url, page_num):
     print(response)
     print(page_num)
 
-    if page_num < 25:
-        page_num = page_num + 25
-        linkedin_scrape(url, page_num)
+    # if page_num < 25:
+    #     page_num = page_num + 25
+    #     linkedin_scrape(url, 0) # feed page_num var in here, and modify if condition to configure length of
+
+    jobs = soup.find_all('a', class_="base-card__full-link absolute top-0 right-0 bottom-0 left-0 p-0 z-[2]")
+    for job in jobs:
+        job_url = job.get('href')
+        # print(job_url)
+        response = requests.get(job_url)
+        soup = BeautifulSoup(response.content, 'html.parser')
+        body = soup.find('div', class_="show-more-less-html__markup").text
+        # body = job.find('div', class_="show-more-less-html__markup")
+        print(body)
 
 linkedin_scrape(url, 0)
