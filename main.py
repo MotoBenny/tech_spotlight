@@ -1,6 +1,9 @@
 import csv
 import requests
 from bs4 import BeautifulSoup
+import os
+import re
+
 # import re
 
 # DONE: scrape jobs from linkedin
@@ -20,7 +23,7 @@ url = "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?ke
 def linkedin_scrape(url, page_num):
     next_page = url + str(page_num)  # constructing the URL
     response = requests.get(str(next_page))  # getting content wuth requests
-    # parsing content with BS4
+    # parsing content with BS4d
     soup = BeautifulSoup(response.content, 'html.parser')
 
     jobs = soup.find_all('a', class_="base-card__full-link")
@@ -54,7 +57,68 @@ def linkedin_scrape(url, page_num):
             continue
 
 
-linkedin_scrape(url, 0)
+# linkedin_scrape(url, 0)
 
 
 # TODO: scrape jobs from indeed
+
+
+"""
+TODO: create list of regex patterns
+TODO: import patterns as list
+TODO: search through bulk text data, for each regex pattern /gmi global multiline insensitive search
+TODO: save results as dictionary key value pairs
+TODO: output the results to a Json Key value object 
+"""
+#importing file-todo: import file!
+def regex_terms(regex_file):
+    with open(regex_file, "r") as f:
+        regex_list = f.readlines()
+        # Laravel: \bLaravel\b {'Laravel': '\bLaravel\b', 'PHP': '\bPHP\b'}
+    patterns_dict = {}
+    for term in regex_list:
+        try:
+            key, value = term.strip().split(": ")
+            patterns_dict[key] = value
+
+        except ValueError:
+            continue
+
+    return patterns_dict
+
+path = 'patterns.txt'
+regex_dict = regex_terms(path)
+print(regex_dict)
+
+def find_tech_occurrences(text_file, patterns_dict):
+    """
+    TODO: open the raw text file
+    TODO: for each value in patterns_dict, search through the raw text
+    TODO: incriment a new results dict, where key = key from patterns_dict, and value = number of times that term was found in raw text
+    TODO: return results dict
+    """
+    pass
+
+def results_to_json(results_dict):
+    """
+    TODO: convert results_dict to json
+    """
+    pass
+
+def upload_results_to_db(results_json):
+    """
+    TODO: sort out all the DB stuff.....
+    """
+    pass
+
+"""
+steps
+* open the bulk_search_text file
+* import pattern.txt as a list of regex patterns
+* import regex--DONE
+* search the bulk data for each regex pattern
+* save results as dictionary key value pairs where key us the tech term, and value is how many times it was found in bulk text
+* convert that dictionary to .JSON format
+
+"""
+
