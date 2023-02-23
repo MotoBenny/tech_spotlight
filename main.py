@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup
 """
 TODO: handle duplicate job postings
 TODO: add error handling for 404 errors or other exceptions
+TODO: explore rate limits, for scraper
+TODO: optimize for the given rate limits
 TODO: configure scrape to run against all available jobs for a given search, and retain the number of jobs scraped. 
 """
 
