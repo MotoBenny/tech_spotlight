@@ -1,5 +1,5 @@
 patterns_dict = {
-    'NET CORE': r'\b.NET\sCORE\b',
+    '.NET CORE': r'\b.NET\sCORE\b',
     'APS.NET': r'\bASP.NET\b',
     'AWS Elastic Load Balancing': r'\bAWS\sElastic\sLoad\sBalancing\s',
     'AWS Lambda': r'\bAWS\sLambda\b',
@@ -26,7 +26,7 @@ patterns_dict = {
     'Bitbucket': r'\bBitbucket\b',
     'BootStrap': r'\bBootStrap\b',
     'Bower': r'\bBower\b',
-    'C#' : r'\bC#\b',
+    'C#': r'\bC#\b',
     'CSS3': r'\bCSS\s3\b',
     'Cassandra': r'\bCassandra\b',
     'CentOS': r'\bCentOS\b',
@@ -45,11 +45,11 @@ patterns_dict = {
     'ESLint': r'\bESLint\b',
     'Elasticsearch': r'\bElasticsearch\b',
     'Electron': r'\bElectron\b',
-    'ExpressJS': r'\bExpressJS?\b',# special regex needed
+    'ExpressJS': r'\bExpressJS?\b',  # special regex needed
     'Firebase': r'\bFirebase\b',
     'Flask': r'\bFlask\b',
     'Flutter': r'\bFlutter\b',
-    'FullPageJS': r'\bFullPageJS?\b',# special regex needed
+    'FullPageJS': r'\bFullPageJS?\b',  # special regex needed
     'G Suite': r'\bG\sSuite\b',
     'Git': r'\bGit\b',
     'GitHub': r'\bGitHub\b',
@@ -75,7 +75,7 @@ patterns_dict = {
     'InVision': r'\bInVision\b',
     'IntelliJ IDEA': r'\bIntelliJ\sIDEA\b',
     'Intercom': r'\bIntercom\b',
-    'Ionic':r' \bIonic\b',
+    'Ionic': r' \bIonic\b',
     'Java': r'\bJava\b',
     'JavaScript': r'\bJavaScript\b',
     'Jenkins': r'\bJenkins\b',
@@ -105,8 +105,8 @@ patterns_dict = {
     'New Relic': r'\bNew\sRelic\b',
     'Next.JS': r'\bNext.JS\b',
     'NoSQL': r'\bNoSQL\b',
-    'Node.js': r'\bNode.js\b', # special regex needed
-    'Notepad++': r'\bNotepad\+\+\b', # special regex needed
+    'Node.js': r'\bNode.js\b',  # special regex needed
+    'Notepad++': r'\bNotepad\+\+\b',  # special regex needed
     'Objective-C': r'\bObjective-C\b',
     'OpenSSL': r'\bOpenSSL\b',
     'Oracle': r'\bOracle\b',
@@ -137,7 +137,7 @@ patterns_dict = {
     'Skype': r'\bSkype\b',
     'Slack': r'\bSlack\b',
     'Slick': r'\bSlick\b',
-    'Socket.IO': r'\bSocket.IO\b', # special regex needed
+    'Socket.IO': r'\bSocket.IO\b',  # special regex needed
     'SourceTree': r'\bSourceTree\b',
     'Spring Boot': r'\bSpring\sBoot\b',
     'Stack Overflow': r'\bStack\sOverflow\b',
@@ -159,7 +159,7 @@ patterns_dict = {
     'VirtualBox': r'\bVirtualBox\b',
     'Visual Studio': r'\bVisual\sStudio\b',
     'Visual Studio Code': r'\bVisual\sStudio\sCode\b',
-    'Vue.js': r'\bVue\.js\b', # special regex needed
+    'Vue.js': r'\bVue\.js\b',  # special regex needed
     'Webpack': r'\bWebpack\b',
     'WebStorm': r'\bWebStorm\b',
     'WooCommerce': r'\bWooCommerce\b',
@@ -172,4 +172,4 @@ patterns_dict = {
     'jQuery': r'\bjQuery\b',
     'jQuery UI': r'\bjQuery\sUI\b',
     'npm': r'\bnpm\b'
-    }
+}

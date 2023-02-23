@@ -71,6 +71,16 @@ TODO: output the results to a Json Key value object
 """
 #importing file-todo: import file!
 def regex_terms(regex_file):
+    """_summary_
+    Args:
+        regex_file (.txt): .txt file containing tech terms, and matching regex patterns
+    Returns:
+        Dict: a dictionary of key value pairs where key is the term and value is the regex pattern
+
+    NOTE: I believe that this is working as intended and the issue is limited to printing the regex patterns. 
+
+    In this case, we must procced with the application (beginning with the find_tech_occurances function) until we output something that shows us if the regex patterns are working.
+    """
     with open(regex_file, "r") as f:
         regex_list = f.readlines()
         # Laravel: \bLaravel\b {'Laravel': '\bLaravel\b', 'PHP': '\bPHP\b'}
@@ -85,12 +95,13 @@ def regex_terms(regex_file):
 
     return patterns_dict
 
-# path = 'patterns.txt'
-# regex_dict = regex_terms(path)
-# print(regex_dict)
-from patterns import patterns_dict
+path = 'patterns.txt'
+regex_dict = regex_terms(path)
+print(regex_dict)
 
-print(patterns_dict)
+
+# from patterns import patterns_dict
+# print(patterns_dict)
 
 def find_tech_occurrences(text_file, patterns_dict):
     """

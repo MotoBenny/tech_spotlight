@@ -103,7 +103,7 @@ MySQL: \bMySQL\b
 NGINX: \bNGINX\b
 New Relic: \bNew\sRelic\b
 Next.JS: \bNext.JS\b
-NoSQL: \bNoSQL\b
+NoSQL: '\bNoSQL\b
 Node.js: \bNode\.js\b
 Notepad++: \bNotepad\+\+\b
 Objective-C: \bObjective-C\b
