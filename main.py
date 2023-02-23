@@ -56,12 +56,11 @@ def linkedin_scrape(url, page_num):
             # if we hit this else, we have already scraped this job, and should proceed to the next in the for loop.
             continue
 
-
-# linkedin_scrape(url, 0)
+# uncomment the line below and run it to perform a initial scrape and create a raw text file of job information.
+# linkedin_scrape(url, 0) 
 
 
 # TODO: scrape jobs from indeed
-
 
 """
 TODO: create list of regex patterns
@@ -86,9 +85,12 @@ def regex_terms(regex_file):
 
     return patterns_dict
 
-path = 'patterns.txt'
-regex_dict = regex_terms(path)
-print(regex_dict)
+# path = 'patterns.txt'
+# regex_dict = regex_terms(path)
+# print(regex_dict)
+from patterns import patterns_dict
+
+print(patterns_dict)
 
 def find_tech_occurrences(text_file, patterns_dict):
     """
